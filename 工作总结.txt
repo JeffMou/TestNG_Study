@@ -1,0 +1,25 @@
+在Win7上安装虚拟机后无法上网：
+之前我安装过一次，也是一直按默认设置，可以成功上网，但后面重装后一直连不上网络。试了几种链接方式
+还是不行，最后终于发现了问题所在，因为之前VMware太卡，就强行将VM相关的服务全部杀掉了，导致后面这些
+服务没有自动开启，把相关服务打开即可~~~。
+
+jenkins环境搭建：
+Ubuntu16.04 64位系统
+1.安装Java环境
+使用java -version，如果之前未安装，则根据提示命令安装你想要的版本
+
+2.安装jenkins，我这里是使用命令方式来安装：
+wget -q -O - https://jenkins-ci.org/debian/jenkins-ci.org.key | sudo apt-key add -  
+sudo sh -c 'echo deb http://pkg.jenkins-ci.org/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'  
+sudo apt-get update  
+sudo apt-get install jenkins
+
+http://localhost:8080/
+
+jenkins：admin/198811
+
+
+Eclipse安装Perl插件后运行程序报错：
+注意检查Perl的路径，我遇到的情况是因为之前安装了GitHub,里面自带有Perl.exe程序，运行时就会指向这个不完整的perl.exe文件
+解决方法：我在win7安装的Strawberry，在环境变量path里面将想要使用的Perl的环境变量放在前面，例如：
+C:\Strawberry\perl\bin;C:\Program Files\Git\usr\bin;
